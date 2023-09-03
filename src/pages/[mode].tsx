@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { type GetServerSideProps } from "next";
+import { Login } from "@/components/login";
 
 export default function Home({ mode }: { mode: string }) {
   console.log({ mode });
@@ -17,7 +18,7 @@ export default function Home({ mode }: { mode: string }) {
         HEY
       </header>
       <main className="flex min-h-screen flex-col items-center justify-center bg-stone-900">
-        You're trying to <p className="text-3xl text-blue-500">{mode}</p>
+        <Login mode={mode} />
       </main>
     </>
   );
