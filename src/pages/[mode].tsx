@@ -1,9 +1,11 @@
 import Head from "next/head";
 import { type GetServerSideProps } from "next";
-import { Login } from "@/components/login";
+import { CredentialsLogin } from "@/components/CredentialsLogin";
+import { useSession } from "next-auth/react";
 
 export default function Home({ mode }: { mode: string }) {
-  console.log({ mode });
+  const stuff = useSession();
+  console.log(stuff);
 
   return (
     <>
@@ -18,7 +20,7 @@ export default function Home({ mode }: { mode: string }) {
         HEY
       </header>
       <main className="flex min-h-screen flex-col items-center justify-center bg-stone-900">
-        <Login mode={mode} />
+        <CredentialsLogin mode={mode} />
       </main>
     </>
   );
